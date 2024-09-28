@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="todo.css">
+    
+
+</head>
+<body>
+    <h1 style="margin-left: 130px; color: rgb(96, 210, 30)">To-Do List</h2>
+
+    <div class="container">
+        <div>
+            <input type="text" id="txt" placeholder="Enter List items Here...">
+            <button onclick="add()">Add Items</button>
+            
+        </div>
+        <div class="text">
+
+        </div>
+       
+    </div>
+    <div class="text">
+
+    </div>
+    
+    <script>
+        let text=document.getElementById("txt");
+        let items=document.querySelector(".text");
+
+    function add(){
+    if(text.value==""){
+        alert("Please Enter your List Items..")
+    }else
+    {
+        let newItem=document.createElement("ul");
+        newItem.innerHTML=`${text.value}`;  
+
+        items.appendChild(newItem);
+        text.value=""; 
+    }   
+}
+    </script>
+</body>
+</html>
